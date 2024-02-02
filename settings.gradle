@@ -1,0 +1,6 @@
+rootProject.name = 'SkyblockDevEnv'
+
+include 'skylib'
+include 'skymetrics'
+
+include 'runenv'
