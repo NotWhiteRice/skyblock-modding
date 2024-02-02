@@ -23,14 +23,14 @@ minecraft {
 
     runs {
         client {
-            workingDirectory.project.file('run/client')
+            workingDirectory project.file('run/client')
 
             property 'forge.logging.markers', 'REGISTRIES'
             property 'forge.logging.console.level', 'debug'
 
             mods {
-                skymetrics {
-                    source sourceSets.skymetrics
+                skylib {
+                    source sourceSets.main
                 }
             }
         }
@@ -42,8 +42,8 @@ minecraft {
             property 'forge.logging.console.level', 'debug'
 
             mods {
-                skymetrics {
-                    source sourceSets.skymetrics
+                skylib {
+                    source sourceSets.main
                 }
             }
         }
@@ -57,15 +57,15 @@ minecraft {
             args '--mod', modID, '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
 
             mods {
-                skymetrics {
-                    source sourceSets.skymetrics
+                skylib {
+                    source sourceSets.main
                 }
             }
         }
     }
 }
 
-sourceSets.skymetrics.resources { srcDir 'src/generated/resources' }
+sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 repositories {
 
